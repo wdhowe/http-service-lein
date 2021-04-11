@@ -1,5 +1,7 @@
 # http-service-lein
 
+[![Build Status][gh-actions-badge]][gh-actions] [![Clojure version][clojure-v]](project.clj)
+
 Http service template with Leiningen.
 
 ## Building
@@ -55,8 +57,6 @@ Available default routes are:
 * GET /config  -> return json of the http-server env settings.
 * GET /healthy  -> return json of the health check response.
 
-...
-
 ## License
 
 Copyright © 2021 Bill Howe
@@ -71,3 +71,9 @@ Public License, v. 2.0 are satisfied: GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or (at your
 option) any later version, with the GNU Classpath Exception which is available
 at `https://www.gnu.org/software/classpath/license.html`.
+
+<!-- Named page links below: /-->
+
+[gh-actions-badge]: https://github.com/wdhowe/http-service-lein/workflows/ci%2Fcd/badge.svg
+[gh-actions]: https://github.com/wdhowe/http-service-lein/actions
+[clojure-v]: https://img.shields.io/badge/clojure-1.10.3-blue.svg
