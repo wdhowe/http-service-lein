@@ -1,8 +1,8 @@
 (ns http-service-lein.default
+  (:gen-class)
   (:require [clojure.tools.logging :as log]
             [http-service-lein.config :as cfg]
-            [trptcolin.versioneer.core :as version])
-  (:gen-class))
+            [trptcolin.versioneer.core :as version]))
 
 (def version "Project version."
   (version/get-version "http-service-lein" "http-service-lein"))
