@@ -25,7 +25,6 @@ jobs:
       - name: Info
         run: |
           lein version
-          'java --version'
       - name: Package
         run: |
           lein deps
