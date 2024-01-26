@@ -163,4 +163,4 @@ at `https://www.gnu.org/software/classpath/license.html`.
 
 [gh-actions-badge]: https://github.com/wdhowe/http-service-lein/workflows/ci%2Fcd/badge.svg
 [gh-actions]: https://github.com/wdhowe/http-service-lein/actions
-[clojure-v]: https://img.shields.io/badge/clojure-1.10.3-blue.svg
+[clojure-v]: https://img.shields.io/badge/clojure-1.11.1-blue.svg
