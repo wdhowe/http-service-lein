@@ -1,4 +1,5 @@
 (ns http-service-lein.core
+  (:gen-class)
   (:require [clojure.tools.logging :as log]
             [compojure.core :as compojure]
             [compojure.route :as route]
@@ -6,8 +7,7 @@
             [http-service-lein.default :as default]
             [org.httpkit.server :as http-server]
             [ring.middleware.defaults :as ring-defaults]
-            [ring.middleware.json :as ring-json])
-  (:gen-class))
+            [ring.middleware.json :as ring-json]))
 
 (compojure/defroutes app-routes
   "HTTP paths are defined here."

@@ -69,6 +69,10 @@ docker-tag:
 docker-run:
 	docker run --interactive --tty --rm --publish 8080:8080 --name testing $(BUILD_TAG)
 
+# docker-run-detach - run the container detached
+docker-run-detach:
+	docker run --detach --rm --publish 8080:8080 --name testing $(BUILD_TAG)
+
 # docker-login - login to registry using vars if available,
 #                otherwise interactive login.
 docker-login:

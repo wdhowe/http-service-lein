@@ -1,6 +1,6 @@
 (ns http-service-lein.config
-  (:require [environ.core :as environ])
-  (:gen-class))
+  (:gen-class)
+  (:require [environ.core :as environ]))
 
 (def conf
   "Load server configuration from the environment."

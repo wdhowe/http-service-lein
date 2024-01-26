@@ -2,24 +2,21 @@
 
 [![Build Status][gh-actions-badge]][gh-actions] [![Clojure version][clojure-v]](project.clj)
 
-Http service template with Leiningen.
+HTTP service template with Leiningen.
 
-## Building
+## Build and Run - lein/jar
+
+Building and running the http service using the lein project tools.
 
 ### Build Standalone Uberjar
 
 The standalone uberjar can be built with lein and run with the java -jar command.
 
-* Clone the project
-* Build the uberjar
+Build the uberjar
 
-  ```bash
-  lein uberjar
-  ```
-
-## Running
-
-Different ways to run the service.
+```bash
+lein uberjar
+```
 
 ### Run With Lein or Jar
 
@@ -42,8 +39,45 @@ Different ways to run the service.
   * With the built uberjar
 
     ```bash
-    java -jar target/uberjar/http-service-lein-0.1.0-standalone.jar
+    java -jar target/uberjar/http-service-lein-1.0.0-standalone.jar
     ```
+
+## Build and Run - docker
+
+Building and running the http service with docker.
+
+### Build the Docker Image
+
+The docker image is built and tagged by running:
+
+```bash
+make build
+```
+
+### Run Docker Container
+
+Different ways to run the development/testing container.
+
+* Run an interactive container.
+  * control+c to stop/remove the container.
+
+  ```bash
+  make docker-run
+  ```
+
+* Run a container and connect with a shell.
+  * Type "exit" to stop/remove the container.
+
+  ```bash
+  make shell
+  ```
+
+* Run a container in detached mode.
+  * Stop the container using "docker stop `CONTAINER ID`". It will be deleted upon stop.
+
+  ```bash
+  docker-run-detach
+  ```
 
 ## Client requests
 
@@ -57,9 +91,62 @@ Available default routes are:
 * GET /config  -> return json of the http-server env settings.
 * GET /healthy  -> return json of the health check response.
 
+### Examples
+
+Example output using [httpie](https://httpie.io/).
+
+help
+
+```bash
+http http://localhost:8080/help
+
+HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Date: Fri, 26 Jan 2024 02:19:36 GMT
+Server: http-kit
+content-length: 140
+
+HTTP API (1.0.0). Send requests to:
+GET /help -> This help dialog.
+GET /config -> Config settings.
+GET /healthy -> Application health check.
+```
+
+config
+
+```bash
+http http://localhost:8080/config
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 26 Jan 2024 02:20:30 GMT
+Server: http-kit
+content-length: 18
+
+{
+    "http-port": 8080
+}
+```
+
+healthy
+
+```bash
+http http://localhost:8080/healthy
+
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+Date: Fri, 26 Jan 2024 02:26:14 GMT
+Server: http-kit
+content-length: 16
+
+{
+    "healthy": true
+}
+```
+
 ## License
 
-Copyright © 2021 Bill Howe
+Copyright © 2021-2024 Bill Howe
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
