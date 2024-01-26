@@ -76,7 +76,7 @@ Different ways to run the development/testing container.
   * Stop the container using "docker stop `CONTAINER ID`". It will be deleted upon stop.
 
   ```bash
-  docker-run-detach
+  make docker-run-detach
   ```
 
 ## Client requests
@@ -99,7 +99,9 @@ help
 
 ```bash
 http http://localhost:8080/help
+```
 
+```bash
 HTTP/1.1 200 OK
 Content-Type: text/plain; charset=utf-8
 Date: Fri, 26 Jan 2024 02:19:36 GMT
@@ -116,7 +118,9 @@ config
 
 ```bash
 http http://localhost:8080/config
+```
 
+```bash
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 Date: Fri, 26 Jan 2024 02:20:30 GMT
@@ -132,7 +136,9 @@ healthy
 
 ```bash
 http http://localhost:8080/healthy
+```
 
+```bash
 HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 Date: Fri, 26 Jan 2024 02:26:14 GMT
