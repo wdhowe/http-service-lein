@@ -9,7 +9,7 @@
   ;;; Dependencies, Plugins
   :dependencies [[org.clojure/clojure "1.11.2"]
                  [org.clojure/tools.logging "1.3.0"]
-                 [compojure "1.7.0"]
+                 [compojure "1.7.1"]
                  [environ "1.2.0"]
                  [http-kit "2.7.0"]
                  [ring/ring-defaults "0.4.0"]
