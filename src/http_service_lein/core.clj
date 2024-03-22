@@ -11,8 +11,7 @@
 
 (compojure/defroutes app-routes
   "HTTP paths are defined here."
-  (compojure/context "/" request
-    (compojure/GET "/config" [] (default/config request))
+  (compojure/context "/" [request]
     (compojure/GET "/healthy" [] (default/healthy request))
     (compojure/GET "/help" [] (default/help request))
     (route/not-found (format "Path not found: %s" (:uri request)))))

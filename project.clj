@@ -1,4 +1,4 @@
-(defproject http-service-lein "1.0.0"
+(defproject http-service-lein "1.1.0"
   
   ;;; Project Metadata
   :description "Http service template with Leiningen."
@@ -7,8 +7,8 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   
   ;;; Dependencies, Plugins
-  :dependencies [[org.clojure/clojure "1.11.1"]
-                 [org.clojure/tools.logging "1.2.4"]
+  :dependencies [[org.clojure/clojure "1.11.2"]
+                 [org.clojure/tools.logging "1.3.0"]
                  [compojure "1.7.0"]
                  [environ "1.2.0"]
                  [http-kit "2.7.0"]

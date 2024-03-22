@@ -3,13 +3,6 @@
             [clojure.test :refer [deftest is testing]]
             [http-service-lein.default :as default]))
 
-(deftest config-test
-  (testing "Config response."
-    (let [resp (default/config {:request-method :get
-                                :uri "/config"})]
-      (is (= 200 (:status resp)))
-      (is (contains? (:body resp) :http-port)))))
-
 (deftest healthy-test
   (testing "Healthy response."
     (let [resp (default/healthy {:request-method :get
