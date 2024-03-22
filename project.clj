@@ -1,4 +1,4 @@
-(defproject http-service-lein "1.0.0"
+(defproject http-service-lein "1.1.0"
   
   ;;; Project Metadata
   :description "Http service template with Leiningen."
