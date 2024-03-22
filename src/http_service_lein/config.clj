@@ -4,6 +4,6 @@
 
 (def conf
   "Load server configuration from the environment."
-  {:http-port (Integer. (or (:http-port environ/env) 8080))})
+  {:http-port (Integer. (get environ/env :http-port 8080))})
 
 (comment (println "Config is:\n" conf))

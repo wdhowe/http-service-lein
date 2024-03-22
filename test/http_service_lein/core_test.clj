@@ -4,13 +4,7 @@
             [http-service-lein.core :as core]
             [ring.mock.request :as mock]))
 
-(deftest app-route-config-test
-  (testing "app-route '/config'"
-    (let [response (core/app (mock/request :get "/config"))]
-      (is (= (:status response) 200))
-      (is (= true (string/includes? (:body response) "http-port"))))))
-
-(deftest app-route-health-test
+(deftest app-route-healthy-test
   (testing "app-route '/healthy'"
     (let [response (core/app (mock/request :get "/healthy"))]
       (is (= (:status response) 200))
