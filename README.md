@@ -88,7 +88,6 @@ Send client requests to the running http-server.
 Available default routes are:
 
 * GET /help  -> return plain text help.
-* GET /config  -> return json of the http-server env settings.
 * GET /healthy  -> return json of the health check response.
 
 ### Examples
@@ -110,26 +109,7 @@ content-length: 140
 
 HTTP API (1.0.0). Send requests to:
 GET /help -> This help dialog.
-GET /config -> Config settings.
 GET /healthy -> Application health check.
-```
-
-config
-
-```bash
-http http://localhost:8080/config
-```
-
-```bash
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=utf-8
-Date: Fri, 26 Jan 2024 02:20:30 GMT
-Server: http-kit
-content-length: 18
-
-{
-    "http-port": 8080
-}
 ```
 
 healthy
